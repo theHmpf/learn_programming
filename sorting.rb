@@ -1,10 +1,25 @@
-puts "and input with a ' ' space"
+strings = %w(Hallo Bauer 123 Kaulquappe Alphateilchen)
+# puts "and input with a ' ' space"
+#
+# begin
+#   string = gets.chomp
+#   strings.push(string)
+# end until string == ""
 
-b = []
+puts strings
+puts ""
 
-begin
-  a = gets.chomp
-  b.push(a)
-end while a == " " or ""
+strings.each do |item|
 
-puts b.sort
+  strings.each do |item2|
+
+    if item.downcase < item2.downcase
+        strings.delete item
+        strings.insert(strings.index(item2), item)
+        break
+    end
+  end
+end
+
+puts ""
+puts strings
